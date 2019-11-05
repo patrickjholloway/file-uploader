@@ -1,0 +1,23 @@
+{{#if disabled}}
+  <svg class="faux-checkbox disabled-state" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <path d="M76 88H24c-6.6 0-12-5.4-12-12V24c0-6.6 5.4-12 12-12h52c6.6 0 12 5.4 12 12v52c0 6.6-5.4 12-12 12z" fill="none" stroke="#AAA" stroke-width="5" stroke-miterlimit="10"/>
+  </svg>
+{{else}}
+  {{#if isIndeterminate}}
+    <svg class="faux-checkbox indeterminate-state" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <path d="M76 88H24c-6.6 0-12-5.4-12-12V24c0-6.6 5.4-12 12-12h52c6.6 0 12 5.4 12 12v52c0 6.6-5.4 12-12 12z" fill="#0074d0" stroke="#0074d0" stroke-width="5" stroke-miterlimit="10"/>
+      <path fill="none" stroke="#fff" stroke-width="12" stroke-miterlimit="10" d="M25.3 50h49.4"/>
+    </svg>
+  {{/if}}
+  {{#if isSelected}}
+    <svg class="faux-checkbox selected-state" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <path d="M76 88H24c-6.6 0-12-5.4-12-12V24c0-6.6 5.4-12 12-12h52c6.6 0 12 5.4 12 12v52c0 6.6-5.4 12-12 12z" fill="#0074d0" stroke="#0074d0" stroke-width="5" stroke-miterlimit="10"/>
+      <path fill="none" stroke="#fff" stroke-width="12" stroke-miterlimit="10" d="M73 32L40 68 27 56"/>
+    </svg>
+  {{/if}}
+  {{#if isUnselected}}
+    <svg class="faux-checkbox unselected-state" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <path d="M76 88H24c-6.6 0-12-5.4-12-12V24c0-6.6 5.4-12 12-12h52c6.6 0 12 5.4 12 12v52c0 6.6-5.4 12-12 12z" fill="none" stroke="#2B2B2B" stroke-width="5" stroke-miterlimit="10"/>
+    </svg>
+  {{/if}}
+{{/if}}

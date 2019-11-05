@@ -1,0 +1,136 @@
+html, body, .ember-view, .main {
+  height: 100%;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #2B2B2B;
+}
+
+$wide-cell-width: 500px;
+
+@mixin basic-row {
+  display: flex;
+  width: 100%;
+  height: 38px;
+  max-height: 38px;
+  align-items: center;
+  border-bottom: 1px solid #DDD;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-list {
+  margin: auto;
+  width: 1028px;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  background-color: #FFF;
+  font-size: 14px;
+  height: auto;
+
+  .faux-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .files {
+    display: flex;
+    width: 1200px;
+  }
+
+
+  .actions {
+    @include basic-row;
+    font-size: 20px;
+
+    .selection-count {
+      margin-right: 15px;
+    }
+  }
+
+  .file-item {
+    @include basic-row;
+
+    .file-cell {
+      margin-left: 15px;
+    }
+  }
+
+  .header-item {
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #DDD;
+
+    .header-cell {
+      flex: 0 1 165px;
+      margin-left: 15px;
+
+      &.wide {
+        flex-basis: $wide-cell-width;
+      }
+    }
+  }
+
+  .selection-cell {
+    width: 28px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .file-item {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+
+    &.disabled {
+      cursor: default;
+    }
+
+    &.selected {
+      background-color: #EEE;
+    }
+
+    &:hover {
+      background-color: #F5F5F5;
+    }
+  }
+
+  .file-cell {
+    flex: 0 1 165px;
+    &.status {
+      text-transform: capitalize;
+    }
+    &.wide {
+      flex-basis: $wide-cell-width;
+    }
+  }
+
+  .selection-count {
+    width: 150px;
+  }
+
+  .selection-count, .download {
+    margin: 0 10px;
+  }
+
+  .download {
+    display: flex;
+    align-items: center;
+
+    .download-icon {
+      height: 15px;
+      margin-right: 5px;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      opacity: .5;
+    }
+  }
+}

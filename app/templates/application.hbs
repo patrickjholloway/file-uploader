@@ -1,5 +1,7 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="main">
+  {{#download-list files=files as |list|}}
+    {{#each files as |file|}}
+      {{list.file-item file=file}}
+    {{/each}}
+  {{/download-list}}
+</div>
