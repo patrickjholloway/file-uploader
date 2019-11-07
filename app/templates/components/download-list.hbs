@@ -1,5 +1,5 @@
 <div class="actions">
-  <div class="selection-cell" {{action 'toggleSelectAll'}}>
+  <div class="selection-cell" role="checkbox" {{action "toggleSelectAll"}}>
     {{faux-checkbox selectAllCheckedState disabled=selectAllDisabled}}
   </div>
   <div class="selection-count">
@@ -9,7 +9,7 @@
       None Selected
     {{/if}}
   </div>
-  <div role="button" class="download {{if (not selectedCount) 'disabled'}}" {{action "downloadSelected"}}>
+  <div role="button" class="download {{if (not selectedCount) "disabled"}}" {{action "downloadSelected"}}>
     <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
       <path d="M9.7 75.3h80.6v10.3H9.7zm22-68.4h36.6v30.8H31.7z" stroke="#2B2B2B" stroke-width="5" stroke-miterlimit="10"/>
       <path d="M9.7 37.7h80.6L50 62.1z"/>
@@ -34,8 +34,8 @@
   </div>
 </div>
 {{yield (hash
-  file-item=(component 'file-item'
+  file-item=(component "file-item"
     selectedFiles=selected
-    selectFile=(action 'selectFile')
-    deselectFile=(action 'deselectFile'))
+    selectFile=(action "selectFile")
+    deselectFile=(action "deselectFile"))
 )}}
